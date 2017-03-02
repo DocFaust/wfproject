@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import de.docfaust.mp3synchronizer.model.*?>
+<?import de.docfaust.mp3synchronizer.javafx.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ProgressBar?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="de.docfaust.mp3synchronizer.javafx.control.MP3SynchronizerController">
+	<MenuBar 
+		GridPane.columnIndex="0" GridPane.rowIndex="0" >
+		<menus>
+			<Menu text="%menu.file">
+				<items>
+					<MenuItem text="%menu.searchsource" onAction="#handleSearchSource"/>
+					<MenuItem text="%menu.searchtarget" onAction="#handleSearchTarget"/>
+					<MenuItem fx:id="menuSetFilter" text="%menu.setfilter" onAction="#handleSetFilter"/>
+				</items>
+			</Menu>
+			<Menu text="%menu.edit">
+				<items>
+					<MenuItem fx:id="menuSynchronize" text="%menu.synchronize" onAction="#handleSynchronize"/>
+					<MenuItem fx:id="menuCancel" text="%menu.cancel" onAction="#handleCancel"/>
+					<MenuItem fx:id="menuDelete" text="%menu.deletetarget" onAction="#handleDeleteTarget"/>
+					<MenuItem fx:id="menuClean" text="%menu.cleantarget" onAction="#handleCleanTarget"/>
+				</items>
+			</Menu>
+		</menus>
+	</MenuBar>
+	<GridPane GridPane.columnIndex="0" GridPane.rowIndex="1"  styleClass="grid">
+		<Label text="%label.source" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+		<TextField fx:id="fldSourceDir" minWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+		<Button text="%menu.searchsource" minWidth="300"  GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#handleSearchSource"/>
+		<Label text="%label.target" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+		<TextField fx:id="fldTargetDir"  minWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+		<Button text="%menu.searchtarget" minWidth="300" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#handleSearchTarget"/>
+	</GridPane>
+
+	<GridPane GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="grid">
+		<Label text="%label.totalfiles" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+		<Label fx:id="lblTotalFiles"  GridPane.columnIndex="1" GridPane.rowIndex="0" text="0"/>
+		<Label text="%label.totallength"  GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+		<Label fx:id="lblTotalLength"  GridPane.columnIndex="1" GridPane.rowIndex="1" text="0"/>
+		<Label text="%label.totaltime"  GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+		<Label fx:id="lblTotalTime"  GridPane.columnIndex="1" GridPane.rowIndex="2" text="0"/>
+		<Label text="%label.currentfiles"  GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+		<Label fx:id="lblCurrentFiles"  GridPane.columnIndex="1" GridPane.rowIndex="3" text="0"/>
+		<Label text="%label.currentlength"  GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+		<Label fx:id="lblCurrentLength"  GridPane.columnIndex="1" GridPane.rowIndex="4" text="0"/>
+		<Label text="%label.currenttime"  GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+		<Label fx:id="lblCurrentTime"  GridPane.columnIndex="1" GridPane.rowIndex="5" text="0"/>
+		<Label text="%label.avgtime"  GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+		<Label fx:id="lblAvgTime"  GridPane.columnIndex="1" GridPane.rowIndex="6" text="0"/>
+		<Label text="%label.avgspeed"  GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+		<Label fx:id="lblAvgSpeed"  GridPane.columnIndex="1" GridPane.rowIndex="7" text="0"/>
+		<Label text="%label.progress"  GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+		<ProgressBar fx:id="pbProgress"  GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+		<Label text="%label.status"  GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+		<Label fx:id="lblStatus"  GridPane.columnIndex="1" GridPane.rowIndex="9" text="Warte..."/>
+	</GridPane>
+
+	<HBox GridPane.columnIndex="0" GridPane.rowIndex="3"  styleClass="grid, hbox">
+		<Button fx:id="btnSynchronize" text="%menu.synchronize" onAction="#handleSynchronize" minWidth="200"/>
+		<Button fx:id="btnCancel" text="%menu.cancel" onAction="#handleCancel"  minWidth="200"/>
+		<Button fx:id="btnDelete" text="%menu.deletetarget" onAction="#handleDeleteTarget"  minWidth="200"/>
+		<Button fx:id="btnClean"  text="%menu.cleantarget" onAction="#handleCleanTarget"  minWidth="200"/>
+	</HBox>
+</GridPane>
+

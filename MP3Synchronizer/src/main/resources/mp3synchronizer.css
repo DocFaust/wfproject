@@ -1,0 +1,62 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root {
+     /*-fx-background-image: url("background.jpg");*/
+     
+}
+.label {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-padding: 3
+    
+}
+.textfield {
+    -fx-padding: 3
+}
+
+#welcometext {
+   -fx-font-size: 32px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+
+.scene{
+    -fx-font: 12pt "Cambria Bold";
+    -fx-color: #e79423;
+    -fx-background: #67644e;
+}
+ 
+.button{
+    -fx-text-fill: #006464;
+    -fx-background-color: linear-gradient(#e79423, #FFFFFF);
+    -fx-border-radius: 5;
+    -fx-insets: 2 2 2 2;
+    -fx-background-radius: 5;
+    -fx-padding:  3 30 3 30;
+    -fx-font-family: "Arial";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+.grid {
+  -fx-content-display: top;
+  -fx-border-insets: 2 2 2 2;
+  -fx-border-color: -fx-text-box-border;
+  -fx-border-width: 2;
+  -fx-padding: 2;
+  	-fx-spacing: 3;
+	-fx-insets: 3 3 3 3
+}
+
+.hbox {
+	-fx-spacing: 3;
+	-fx-insets: 3 3 3 3
+}
+
